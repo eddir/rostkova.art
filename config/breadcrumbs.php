@@ -21,6 +21,12 @@ return [
         'icon' => 'file-text',
         'url' => '/admin/posts',
     ],
+    'paintings' =>
+    [
+        'name' => 'paintings',
+        'icon' => 'file-text',
+        'url' => '/admin/paintings',
+    ],
     'users' =>
     [
         'name' => 'users',

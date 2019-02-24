@@ -16,6 +16,12 @@ return [
         'new' => false,
         'active' => false,
     ],
+    'paintings' => [
+        'order' => 'created_at',
+        'direction' => 'desc',
+        'new' => false,
+        'active' => false,
+    ],
     'contacts' => [
         'new' => false,
     ],

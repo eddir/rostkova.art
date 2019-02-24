@@ -244,6 +244,7 @@ return [
         ],
         'back' => [
             'posts' => 5,
+            'paintings' => 5,
             'users' => 8,
             'comments' => 3,
             'contacts' => 3,

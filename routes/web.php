@@ -61,6 +61,8 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         Route::name('posts.active')->put('posts/active/{post}/{status?}', 'PostController@updateActive')->middleware('can:manage,post');
         Route::resource('posts', 'PostController');
 
+        Route::resource('paintings', 'PaintingController');
+
         // Notifications
         Route::name('notifications.index')->get('notifications/{user}', 'NotificationController@index');
         Route::name('notifications.update')->put('notifications/{notification}', 'NotificationController@update');

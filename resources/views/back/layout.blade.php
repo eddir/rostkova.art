@@ -217,6 +217,28 @@ desired effect
           ],
         ])
 
+        @include('back.partials.treeview', [
+          'icon' => 'file-text',
+          'type' => 'painting',
+          'items' => [
+            [
+              'route' => route('paintings.index'),
+              'command' => 'list',
+              'color' => 'blue',
+            ],
+            [
+              'route' => route('paintings.index', ['new' => 'on']),
+              'command' => 'new',
+              'color' => 'yellow',
+            ],
+            [
+              'route' => route('paintings.create'),
+              'command' => 'create',
+              'color' => 'green',
+            ],
+          ],
+        ])
+
         <li><a href="{{ route('medias.index') }}"><i class="fa fa-image"></i> <span>@lang('Medias')</span></a></li>
 
         @admin
