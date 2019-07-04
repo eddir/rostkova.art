@@ -18,7 +18,7 @@
 */
 
 // Home
-Route::name('home')->get('/', 'Front\PostController@index');
+Route::name('home')->get('/', 'Front\PaintingController@index');
 
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);

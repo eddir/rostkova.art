@@ -43,6 +43,16 @@ class PaintingRepository
     }
 
     /**
+     * Get paintings for the top page.
+     *
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function getPresent()
+    {
+        return Painting::limit(10)->get();
+    }
+
+    /**
      * Get painting by slug.
      *
      * @param  string  $slug
@@ -57,8 +67,9 @@ class PaintingRepository
     /**
      * Update painting.
      *
-     * @param  \App\Models\Painting  $painting
-     * @param  \App\Http\Requests\PaintingRequest  $request
+     * @param \App\Models\Painting  $painting
+     * @param \App\Http\Requests\PaintingRequest  $request
+     * 
      * @return void
      */
     public function update($painting, $request)
