@@ -8,8 +8,8 @@
 	<!--- basic page needs
 	================================================== -->
 	<meta charset="utf-8">
-	<title>{{ isset($post) && $post->seo_title ? $post->seo_title :  __(lcfirst('Title')) }}</title>
-	<meta name="description" content="44{{ isset($post) && $post->meta_description ? $post->meta_description : __('description') }}">
+	<title>Росткова Наталья</title>
+	<meta name="description" content="Сайт художника - Ростковой Натальи Станиславовной.">
 	<meta name="author" content="@lang(lcfirst ('Author'))">
 	@if(isset($post) && $post->meta_keywords)
 		<meta name="keywords" content="{{ $post->meta_keywords }}">
@@ -25,6 +25,7 @@
 	<link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
 	<link rel="stylesheet" href="css/app.css">
 	<style>
+		@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
 		html,
 		body {
 			height: 100%;
@@ -37,6 +38,7 @@
 			width: 100%;
 			height: 100%;
 			z-index: -1;
+			background-color:rgba(0,0,0,0.3);
 		}
 	
 		.carousel,
@@ -56,17 +58,22 @@
 		}
 	
 		#content-wrapper {
-			position: absolute;
+			position: fixed;
 			z-index: 1 !important;
 			min-width: 100%;
 			min-height: 100%;
 		}
-	
-		.well {
-			opacity: 0.85
+
+		#background-transparent {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background-color: rgba(0, 0, 0, 0.45);
 		}
 
-		.page-header h3 {
+		.page-header {
 			color: #fff;
 			text-shadow:
 			-0 -1px 0 #000000,
@@ -85,6 +92,13 @@
 			1px -1px 0 #000000,
 			-1px 1px 0 #000000,
 			1px 1px 0 #000000;
+		}
+
+		.text-about {
+			font-size: 26px;
+			color: #fff;
+			font-family: 'Marck Script', cursive;
+			font-weight: 300;
 		}
 	</style>
 
@@ -113,6 +127,8 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="background-transparent"></div>
 	
 	
 	<div id="content-wrapper">
@@ -121,7 +137,9 @@
 			<div class="page-header">
 				<h3>Наталья Росткова</h3>
 			</div>
-			
+			<div class="text-about">
+				Личный сайт художника - Ростковой Натальи Станиславовной<br>Связь: mail@rostkova.art
+			</div>
 		</div><!-- End Container -->
 		<!-- PAGE CONTENT -->
 	</div>
