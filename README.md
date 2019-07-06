@@ -6,7 +6,7 @@
 
 Минимальная локальная установка под OS Ubuntu 16.04 и PHP 7.2
 
-* `git clone git@github.com:eddir/rostkova.art.git rostkova.art
+* `git clone git@github.com:eddir/rostkova.art.git rostkova.art`
 * `cd projectname`
 * `php composer.phar install`
 * `php composer.phar update`
