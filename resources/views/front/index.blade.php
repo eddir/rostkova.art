@@ -24,84 +24,6 @@
 	================================================== -->
 	<link rel="stylesheet" href="{{ asset('css/vendor.css') }}">
 	<link rel="stylesheet" href="css/app.css">
-	<style>
-		@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
-		html,
-		body {
-			height: 100%;
-			width: 100%;
-			position: relative;
-		}
-	
-		#background-carousel {
-			position: fixed;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-			background-color:rgba(0,0,0,0.3);
-		}
-	
-		.carousel,
-		.carousel-inner {
-			width: 100%;
-			height: 100%;
-			z-index: 0;
-			overflow: hidden;
-		}
-	
-		.item {
-			width: 100%;
-			height: 100%;
-			background-position: center center;
-			background-size: cover;
-			z-index: 0;
-		}
-	
-		#content-wrapper {
-			position: fixed;
-			z-index: 1 !important;
-			min-width: 100%;
-			min-height: 100%;
-		}
-
-		#background-transparent {
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			right: 0px;
-			bottom: 0px;
-			background-color: rgba(0, 0, 0, 0.45);
-		}
-
-		.page-header {
-			color: #fff;
-			text-shadow:
-			-0 -1px 0 #000000,
-			0 -1px 0 #000000,
-			-0 1px 0 #000000,
-			0 1px 0 #000000,
-			-1px -0 0 #000000,
-			1px -0 0 #000000,
-			-1px 0 0 #000000,
-			1px 0 0 #000000,
-			-1px -1px 0 #000000,
-			1px -1px 0 #000000,
-			-1px 1px 0 #000000,
-			1px 1px 0 #000000,
-			-1px -1px 0 #000000,
-			1px -1px 0 #000000,
-			-1px 1px 0 #000000,
-			1px 1px 0 #000000;
-		}
-
-		.text-about {
-			font-size: 26px;
-			color: #fff;
-			font-family: 'Marck Script', cursive;
-			font-weight: 300;
-		}
-	</style>
-
 	<!-- script
 	================================================== -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
@@ -135,8 +57,10 @@
 		<!-- PAGE CONTENT -->
 		<div class="container">
 			<div class="page-header">
-				<h3>Наталья Росткова</h3>
+				<h3 style="display: inline-block;">Наталья Росткова</h3>
+				<a class="btn btn-success" style="text-align: right" href="{{ route('gallery') }}">Галерея</a>
 			</div>
+			<hr align="center" class="bg-white"/>
 			<div class="text-about">
 				Личный сайт художника - Ростковой Натальи Станиславовной<br>Связь: mail@rostkova.art
 			</div>

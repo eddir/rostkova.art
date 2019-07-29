@@ -20,6 +20,8 @@
 // Home
 Route::name('home')->get('/', 'Front\PaintingController@index');
 
+Route::name('gallery')->get('/gallery', 'Front\PaintingController@list');
+
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
 

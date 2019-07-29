@@ -29,7 +29,7 @@ class PaintingController extends Controller
     }
 
     /**
-     * Display a listing of the Paintings.
+     * Display index.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,6 +38,18 @@ class PaintingController extends Controller
         $Paintings = $this->PaintingRepository->getPresent();
 
         return view('front.index', compact('Paintings'));
+    }
+
+    /**
+     * Display a listing of the Paintings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function list()
+    {
+        $Paintings = $this->PaintingRepository->getPresent();
+
+        return view('front.gallery.index', compact('Paintings'));
     }
 
 }
