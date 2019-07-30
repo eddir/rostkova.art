@@ -57,8 +57,8 @@
 		<!-- PAGE CONTENT -->
 		<div class="container">
 			<div class="page-header">
-				<h3 style="display: inline-block;">Наталья Росткова</h3>
-				<a class="btn btn-success" style="text-align: right" href="{{ route('gallery') }}">Галерея</a>
+				<h3>Наталья Росткова</h3>
+				<a class="btn btn-success float-right" href="{{ route('gallery') }}">Галерея</a>
 			</div>
 			<hr align="center" class="bg-white"/>
 			<div class="text-about">

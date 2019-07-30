@@ -59,6 +59,10 @@ body {
 }
 
 .page-header {
+    justify-content: space-around;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
     color: #fff;
     text-shadow:
     -0 -1px 0 #000000,
