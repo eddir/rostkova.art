@@ -45,6 +45,8 @@ Route::name('category')->get('category/{category}', 'Front\PostController@catego
 // Authentification
 Auth::routes();
 
+Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 
 /*
 |--------------------------------------------------------------------------
@@ -105,3 +107,7 @@ Route::prefix('admin')->namespace('Back')->group(function () {
     });
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

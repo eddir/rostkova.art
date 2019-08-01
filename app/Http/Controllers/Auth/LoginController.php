@@ -64,4 +64,17 @@ class LoginController extends Controller
             'password' => $request->input('password'),
         ];
     }
+
+    public function userFindorCreate($social_user){
+        $user = User::where('provider_id', $social_user->id)->first();
+ 
+        if (!$user) {
+            $user = new User;
+            $user->name = $social_user->getName();
+            $user->email = $social_user->getEmail();
+            $user->provider_id = $social_user->getid();
+            $user->save();
+        }
+        return $user;
+    }
 }
