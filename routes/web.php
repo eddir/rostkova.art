@@ -71,6 +71,8 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         Route::name('notifications.index')->get('notifications/{user}', 'NotificationController@index');
         Route::name('notifications.update')->put('notifications/{notification}', 'NotificationController@update');
 
+        Route::name('helper')->get('helper', 'AdminController@helper');
+
         // Medias
         Route::view('medias', 'back.medias')->name('medias.index');
 

@@ -47,8 +47,8 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+<div class="wrapper ">
 
   <!-- Main Header -->
   <header class="main-header">
@@ -239,8 +239,9 @@ desired effect
           ],
         ])
 
+        <li><a href="{{ route('helper') }}"><i class="fa fa-flash"></i> <span>@lang('Helper')</span></a></li>
         <li><a href="{{ route('medias.index') }}"><i class="fa fa-image"></i> <span>@lang('Medias')</span></a></li>
-
+        
         @admin
           <li><a href="{{ route('settings.edit') }}"><i class="fa fa-cog"></i> <span>@lang('Settings')</span></a></li>
         @endadmin
@@ -283,7 +284,9 @@ desired effect
 
     <!-- Main content -->
     <section class="content">
-      @yield('main')
+      <div id="app">
+        @yield('main')
+      </div>
     </section>
     <!-- /.content -->
   </div>
@@ -307,6 +310,8 @@ desired effect
 <script src="//cdn.jsdelivr.net/sweetalert2/6.3.8/sweetalert2.min.js"></script>
 
 @yield('js')
+
+<script src="{{ asset('js/app.js') }}"></script>
 
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/js/app.min.js') }}"></script>

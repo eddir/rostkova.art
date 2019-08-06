@@ -17,11 +17,11 @@ class CreatePaintingsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('title');
-            $table->string('slug')->unique();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->boolean('active')->default(false);
             $table->string('image');
             $table->decimal('price', 7, 2);
+            $table->string('slug')->nullable();
         });
     }
 

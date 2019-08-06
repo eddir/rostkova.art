@@ -27,6 +27,12 @@ return [
         'icon' => 'file-text',
         'url' => '/admin/paintings',
     ],
+    'helper' =>
+    [
+        'name' => 'helper',
+        'icon' => 'sheep',
+        'url' => '/admin/helper',
+    ],
     'users' =>
     [
         'name' => 'users',

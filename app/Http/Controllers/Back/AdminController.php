@@ -105,6 +105,16 @@ class AdminController extends Controller
     }
 
     /**
+     * An user-friendly helper for doing something in admin pannel
+     * 
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function helper()
+    {
+        return view('back.helper');
+    }
+
+    /**
      * Check and refresh cache if exists
      *
      * @return bool

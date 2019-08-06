@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 /*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });*/
+
+Route::namespace('Api')->group(function () {
+    Route::prefix('helper')->group(function () {
+        Route::post('uploadImage', 'HelperController@uploadImage');
+        Route::post('store', 'HelperController@store');
+        Route::get('ping', function () { return "pong"; });
+    });
+});

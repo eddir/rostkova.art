@@ -62,7 +62,7 @@
 			</div>
 			<hr align="center" class="bg-white"/>
 			<div class="text-about">
-				Личный сайт художника - Ростковой Натальи Станиславовной<br>Связь: mail@rostkova.art
+				Личный сайт художника - Ростковой Натальи<br>Связь: mail@rostkova.art
 			</div>
 		</div><!-- End Container -->
 		<!-- PAGE CONTENT -->

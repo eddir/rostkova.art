@@ -41,5 +41,11 @@ return [
         'create' => 'categoryCreate',
         'edit' => 'categoryEdit',
     ],
-
+    'paintings' => [
+	'index' => 'paintingsGestion',
+	'create' => 'paintingCreate',
+	'edit' => 'paintingEdit',
+	'show' => 'paintingShow',
+    ],
+    'helper' => 'helperGestion',
 ];
