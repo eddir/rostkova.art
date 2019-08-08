@@ -34,7 +34,7 @@
 
 <body id="top">
 
-	<div id="app">
+	<div>
 
 		<header>
 			<div class="collapse bg-dark" id="navbarHeader">
@@ -72,9 +72,11 @@
 			</div>
 		</header>
 
-		<main role="main">
-			@yield('main')
-		</main>
+		<div id="app">
+			<main role="main">
+				@yield('main')
+			</main>
+		</div>
 
 		<div id="preloader">
 			<div id="loader"></div>
@@ -82,6 +84,10 @@
 
 		<footer class="text-muted bg-dark">
 			<div class="container">
+				<p><a href="/">Главная</a></p>
+				<p><a href="{{ route('gallery') }}">Галерея</a></p>
+				<p><a href="{{ route('about') }}">О нас</a></p>
+				<p><a href="{{ route('contacts.create') }}">Контакты</a></p>
 				<p class="float-right">
 					<a href="#">Наверх</a>
 				</p>

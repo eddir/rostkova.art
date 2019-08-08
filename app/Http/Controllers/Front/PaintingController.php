@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\ {
     Http\Controllers\Controller,
     Repositories\PaintingRepository,
+    Models\Painting
 };
 use Illuminate\Http\Request;
 
@@ -50,6 +51,18 @@ class PaintingController extends Controller
         $Paintings = $this->PaintingRepository->getPresent();
 
         return view('front.gallery.index', compact('Paintings'));
+    }
+
+    /**
+     * Display the specified post by slug.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Request $request)
+    {
+        $painting = Painting::findOrFail($request->id);
+        return view('front.gallery.painting', compact('painting'));
     }
 
 }

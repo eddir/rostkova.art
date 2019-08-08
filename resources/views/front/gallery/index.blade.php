@@ -18,7 +18,7 @@
 
       <div class="row">
         @foreach ($Paintings as $paint)
-        <div class="col-md-4">
+        <a class="col-md-4" onclick="location.href = '{{ route('picture', ['id' => $paint->id]) }}'">
           <div class="card mb-4 shadow-sm">
             <img class="card-img-top" src="{{ $paint->image }}" alt="Card image">
             <div class="card-body">

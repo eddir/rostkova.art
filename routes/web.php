@@ -21,6 +21,7 @@
 Route::name('home')->get('/', 'Front\PaintingController@index');
 
 Route::name('gallery')->get('/gallery', 'Front\PaintingController@list');
+Route::name('picture')->get('/gallery/{id}', 'Front\PaintingController@show');
 Route::name('about')->get('/about', 'Front\PostController@about');
 
 // Contact
