@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c3b95af1e9281349966ad6088c27c2c",
+    "content-hash": "62ada82ad87be6efb3df90e38d56f51e",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",

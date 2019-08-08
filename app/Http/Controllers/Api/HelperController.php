@@ -23,10 +23,16 @@ class HelperController extends Controller
      */
     public function uploadImage(Request $request)
     {
-        $imageName = time() . '.' . $request->image->getClientOriginalExtension();
-        $request->image->move(public_path('files'), $imageName);
+        $imageName = time();
+        $imageFullName = $imageName . '.' . $request->image->getClientOriginalExtension();
+        $imageMinName = $imageName . '.' . "min.jpg";
+        $request->image->move(public_path('files'), $imageFullName);
 
-        return response()->json(['ok' => true, 'response' => ['file' => url('/files/' . $imageName)]]);
+        $img = \Image::make(public_path() . '/files/' . $imageFullName);
+        $img->resize(round($img->width() / 3), round($img->height() / 3));
+        $img->save(public_path() . '/files/' . $imageName . ".min.jpg", 80, 'jpg');
+
+        return response()->json(['ok' => true, 'response' => ['file' => url('/files/' . $imageFullName)]]);
     }
 
     /**
