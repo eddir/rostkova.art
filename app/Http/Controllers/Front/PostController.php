@@ -107,4 +107,16 @@ class PostController extends Controller
 
         return view('front.index', compact('posts', 'info'));
     }
+
+    /**
+     * Display the about page.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  string $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function about()
+    {
+        return view('front.article', $this->postRepository->getPostBySlug('about'));
+    }
 }

@@ -21,6 +21,7 @@
 Route::name('home')->get('/', 'Front\PaintingController@index');
 
 Route::name('gallery')->get('/gallery', 'Front\PaintingController@list');
+Route::name('about')->get('/about', 'Front\PostController@about');
 
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
