@@ -17,7 +17,8 @@ $factory->define(App\Models\Contact::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+        'type' => "email",
+        'address' => $faker->unique()->safeEmail,
         'message' => $faker->realText($maxNbChars = 200, $indexSize = 2),
     ];
 });

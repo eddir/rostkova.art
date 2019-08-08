@@ -4,67 +4,92 @@
 
    <!-- content
    ================================================== -->
-   <section id="content-wrap" class="site-page">
+   <div class="container">
    	<div class="row">
-   		<div class="col-twelve">
+        <div class="col-lg-6 col-xs-12">
 
-   			<section>  
+            <div class="card">
+                <div class="card-body">
 
-                <div class="primary-content">
+                    @if (session('ok'))
+                        @component('front.components.alert')
+                            @slot('type')
+                                success
+                            @endslot
+                            {!! session('ok') !!}
+                        @endcomponent
+                    @endif
 
-						<h1 class="entry-title add-bottom">@lang('Get In Touch With Us')</h1>
+                    <h1 class="entry-title add-bottom">@lang('Get In Touch With Us')</h1>
 
-						<p class="lead">@lang('Lorem ipsum Deserunt est dolore Ut Excepteur nulla occaecat magna occaecat Excepteur nisi esse veniam dolor consectetur minim qui nisi esse deserunt commodo ea enim ullamco non voluptate consectetur minim aliquip Ut incididunt amet ut cupidatat.')</p>
-
-						<p>@lang('Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua ea nisi sint ut quis proident ullamco ut dolore culpa occaecat ut laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.')</p>
-
-						<div class="row">
-							<div class="col-six tab-full">
-								<h4>@lang('Where to Find Us')</h4>
-					  			<p>@lang('1600 Amphitheatre Parkway<br>Mountain View, CA<br>94043 US')</p>
-							</div>
-							<div class="col-six tab-full">
-								<h4>@lang('Contact Info')</h4>
-					  			<p>@lang('someone@abstractwebsite.com<br>info@abstractwebsite.com<br>Phone: (+63) 555 1212')</p>
-							</div>
-						</div>
-
-                        @if (session('ok'))
-                            @component('front.components.alert')
-                                @slot('type')
-                                    success
-                                @endslot
-                                {!! session('ok') !!}
-                            @endcomponent
-                        @endif
-
-						<form method="post" action="{{ route('contacts.store') }}">
-                            {{ csrf_field() }}
+                    <p class="lead">По вопросам приобретения и доставки картин оставьте свои контакты ниже.</p>
+                    
+                    <form method="post" action="{{ route('contacts.store') }}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
                             @if ($errors->has('name'))
                                 @component('front.components.error')
                                     {{ $errors->first('name') }}
                                 @endcomponent
-                            @endif 
-                            <input id="name" placeholder="@lang('Your name')" type="text" class="full-width"  name="name" value="{{ old('name') }}" required autofocus>
-                            @if ($errors->has('email'))
+                            @endif
+                            <label for="name">Имя</label>
+                            <input id="name" placeholder="Как Вас зовут?" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            @if ($errors->has('type'))
                                 @component('front.components.error')
-                                    {{ $errors->first('email') }}
+                                    {{ $errors->first('type') }}
                                 @endcomponent
-                            @endif 
-                            <input id="email" placeholder="@lang('Your email')" type="email" class="full-width"  name="email" value="{{ old('email') }}" required>
-                            @if ($errors->has('message'))
+                            @endif
+                            <label for="type">Способ связи</label>
+                            <select name="type" class="custom-select mr-sm-2" id="type">
+                                <option selected>Выбрать...</option>
+                                <option value="phone">По телефону</option>
+                                <option value="email">По электронной почте</option>
+                                <option value="telegram">Telegram</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="viber">Viber</option>
+                                <option value="vk">ВКонтакте</option>
+                                <option value="ok">Одноклассники</option>
+                            </select>
+                            <small id="typeHelp" class="form-text text-muted">Выберите обратный звонок или социальную сеть для связи.</small>
+                        </div>
+                        <div class="form-group">
+                            @if ($errors->has('address'))
                                 @component('front.components.error')
-                                    {{ $errors->first('message') }}
+                                    {{ $errors->first('address') }}
                                 @endcomponent
-                            @endif 
-                            <textarea name="message" id="message" class="full-width" placeholder="@lang('Your message')" ></textarea>
-                            <button type="submit" class="submit button-primary full-width-on-mobile">Submit</button>
-  				        </form> <!-- end form -->
-                    </div>
-			</section>
+                            @endif
+                            <label for="address">Адрес</label>
+                            <input id="address" placeholder="@lang('Address')" type="text" class="form-control" name="address" value="Адрес" required>
+                            <small id="typeHelp" class="form-text text-muted">Номер телефона или ссылка на профиль или почту.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea name="message" id="message" class="form-control" placeholder="@lang('Your message')"></textarea>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    @if ($errors->has('confirm'))
+                                        @component('front.components.error')
+                                            {{ $errors->first('confirm') }}
+                                        @endcomponent
+                                    @endif
+                                    <input name="confirm" class="form-check-input" type="checkbox" id="confirm">
+                                    <label class="form-check-label" for="confirm">
+                                        Согласие на обработку персональных данных
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
    		   		
 		</div> <!-- end col-twelve -->
    	</div> <!-- end row -->
-   </section> <!-- end content --> 
+</div> <!-- end content --> 
       
 @endsection

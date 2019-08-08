@@ -25,26 +25,8 @@ Route::name('gallery')->get('/gallery', 'Front\PaintingController@list');
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
 
-// Posts and comments
-Route::prefix('posts')->namespace('Front')->group(function () {
-    Route::name('posts.display')->get('{slug}', 'PostController@show');
-    Route::name('posts.tag')->get('tag/{tag}', 'PostController@tag');
-    Route::name('posts.search')->get('', 'PostController@search');
-    Route::name('posts.comments.store')->post('{post}/comments', 'CommentController@store');
-    Route::name('posts.comments.comments.store')->post('{post}/comments/{comment}/comments', 'CommentController@store');
-    Route::name('posts.comments')->get('{post}/comments/{page}', 'CommentController@comments');
-});
-
-Route::resource('comments', 'Front\CommentController', [
-    'only' => ['update', 'destroy'],
-    'names' => ['destroy' => 'front.comments.destroy']
-]);
-
-Route::name('category')->get('category/{category}', 'Front\PostController@category');
-
 // Authentification
 Auth::routes();
-
 Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 
@@ -109,7 +91,5 @@ Route::prefix('admin')->namespace('Back')->group(function () {
     });
 
 });
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

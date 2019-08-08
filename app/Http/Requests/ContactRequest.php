@@ -13,8 +13,10 @@ class ContactRequest extends Request
     {
         return [
             'name' => 'bail|required|max:255',
-            'email' => 'bail|required|email',
-            'message' => 'bail|required|max:1000'
+            'type' => 'required',
+            'address' => 'required',
+            'message' => 'max:1000',
+            'confirm' => 'required|accepted'
         ];
     }
 }
