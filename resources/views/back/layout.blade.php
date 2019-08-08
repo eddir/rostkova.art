@@ -156,6 +156,7 @@ desired effect
               ],
             ],
           ])
+        @endadmin
 
           @include('back.partials.treeview', [
             'icon' => 'envelope',
@@ -173,27 +174,6 @@ desired effect
               ],
             ],
           ])
-
-          @include('back.partials.treeview', [
-            'icon' => 'comment',
-            'type' => 'comment',
-            'items' => [
-              [
-                'route' => route('comments.index'),
-                'command' => 'list',
-                'color' => 'blue',
-              ],
-              [
-                'route' => route('comments.index', ['new' => 'on']),
-                'command' => 'new',
-                'color' => 'yellow',
-              ],
-            ],
-          ])
-
-        <li><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> <span>@lang('Categories')</span></a></li>
-
-        @endadmin
 
         @include('back.partials.treeview', [
           'icon' => 'file-text',
@@ -218,7 +198,7 @@ desired effect
         ])
 
         @include('back.partials.treeview', [
-          'icon' => 'file-text',
+          'icon' => 'image',
           'type' => 'painting',
           'items' => [
             [
