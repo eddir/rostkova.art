@@ -29,8 +29,8 @@ class HelperController extends Controller
         $request->image->move(public_path('files'), $imageFullName);
 
         $img = \Image::make(public_path() . '/files/' . $imageFullName);
-        $img->resize(round($img->width() / 3), round($img->height() / 3));
-        $img->save(public_path() . '/files/' . $imageName . ".min.jpg", 80, 'jpg');
+        $img->resize(round($img->width() / 8), round($img->height() / 8));
+        $img->save(public_path() . '/files/' . $imageName . ".min.jpg", 70, 'jpg');
 
         return response()->json(['ok' => true, 'response' => ['file' => url('/files/' . $imageFullName)]]);
     }
