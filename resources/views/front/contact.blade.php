@@ -61,7 +61,7 @@
                                 @endcomponent
                             @endif
                             <label for="address">Адрес</label>
-                            <input id="address" placeholder="@lang('Address')" type="text" class="form-control" name="address" value="Адрес" required>
+                            <input id="address" placeholder="@lang('Address')" type="text" class="form-control" name="address" placeholder="Адрес" required>
                             <small id="typeHelp" class="form-text text-muted">Номер телефона или ссылка на профиль или почту.</small>
                         </div>
                         <div class="form-group">

@@ -4,8 +4,9 @@
         <table id="contacts" class="table table-striped table-bordered">
             <thead>
             <tr>
-                <th>@lang('Name')</th>
-                <th>@lang('Email')</th>
+		<th>@lang('Name')</th>
+		<th>@lang('Type')</th>
+		<th>@lang('Email')</th>
                 <th>@lang('New')</th>
                 <th>@lang('Creation')</th>
                 <th></th>
@@ -14,7 +15,8 @@
             <tbody>
                 <tr>
                     <td>{{ $contact->name }}</td>
-                    <td>{{ $contact->email }}</td>
+		    <td>{{ $contact->type }}</td>
+		    <td>{{ $contact->address }}</td>
                     <td>
                         <input type="checkbox" name="seen" value="{{ $contact->id }}" {{ is_null($contact->ingoing) ?  'disabled' : 'checked'}}>
                     </td>
