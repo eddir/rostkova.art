@@ -1,10 +1,3 @@
-
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-})
-
 var back = (function () {
 
     var order = 'created_at'
@@ -76,7 +69,10 @@ var back = (function () {
         spin()
         $.ajax({
             url: target,
-            type: verb
+            type: verb,
+            beforeSend: function (request) {
+                request.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+            },
         })
             .done(function () {
                 load(url, errorAjax)
