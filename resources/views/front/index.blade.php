@@ -44,7 +44,7 @@
 					<div class="item 
 					@if($loop->first) 
 						active
-					@endif" style="background-image:url({{ $paint->image }})"></div>
+					@endif" style="background-image:url({{ $paint->thumbnails }})"></div>
 				@endforeach
 			</div>
 		</div>

@@ -20,7 +20,7 @@
         @foreach ($Paintings as $paint)
         <a class="col-md-4" onclick="location.href = '{{ route('picture', ['id' => $paint->id]) }}'">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ $paint->image }}" alt="Card image">
+            <img class="card-img-top" src="{{ $paint->thumbnails }}" alt="Card image">
             <div class="card-body">
               <p class="card-text"><b>{{ $paint->title }}</b>. {!! $paint->body !!}</p>
             </div>

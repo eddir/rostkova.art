@@ -49,7 +49,11 @@ class PaintingRepository
      */
     public function getPresent()
     {
-        return Painting::limit(10)->get();
+	$paintings = Painting::limit(10)->get();
+	foreach ($paintings as &$p) {
+		$p->thumbnails = implode('.', array_slice(explode('.', $p->image), 0, -1)) . ".min.jpg";
+	}
+	return $paintings;
     }
 
     /**
