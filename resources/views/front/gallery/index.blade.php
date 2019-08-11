@@ -18,11 +18,12 @@
 
       <div class="row">
         @foreach ($Paintings as $paint)
-        <a class="col-md-4" onclick="location.href = '{{ route('picture', ['id' => $paint->id]) }}'">
+        <div class="col-md-4" onclick="location.href = '{{ route('picture', ['id' => $paint->id]) }}'">
           <div class="card mb-4 shadow-sm">
             <img class="card-img-top" src="{{ $paint->thumbnails }}" alt="Card image">
-            <div class="card-body">
-              <p class="card-text"><b>{{ $paint->title }}</b>. {!! $paint->body !!}</p>
+	    <div class="card-body">
+	      <b>{{ $paint->title }}</b>. {!! mb_strimwidth(strip_tags($paint->body), 0, 25, '...') !!}
+	      <p><a style="margin-top: 10px" class="btn btn-outline-primary">Подробнее</a></p>
             </div>
           </div>
         </div>
