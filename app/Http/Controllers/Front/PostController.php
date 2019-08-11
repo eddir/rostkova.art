@@ -119,4 +119,9 @@ class PostController extends Controller
     {
         return view('front.article', $this->postRepository->getPostBySlug('about'));
     }
+
+    public function privacy()
+    {
+        return view('front.article', $this->postRepository->getPostBySlug('privacy'));
+    }
 }
