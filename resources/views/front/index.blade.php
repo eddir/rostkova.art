@@ -38,16 +38,22 @@
 
 <body id="top">
 	<div id="background-carousel">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-inner">
-				@foreach ($Paintings as $paint)
-					<div class="item 
-					@if($loop->first) 
-						active
-					@endif" style="background-image:url({{ $paint->thumbnails }})"></div>
-				@endforeach
-			</div>
-		</div>
+	
+	
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+  
+  @foreach ($Paintings as $paint)
+    <div class="carousel-item
+    @if($loop->first) 
+		active
+	@endif" style="height: 100vh;width: 100%;position: relative;">
+      <img style="object-fit: cover;height: 100%;width: 100%;" src="{{ $paint->image }}">
+    </div>
+  @endforeach
+  </div>
+</div>
+
 	</div>
 
 	<div id="background-transparent"></div>
@@ -73,9 +79,11 @@
 	<script src="{{ asset('js/main.js') }}"></script>
 	<script src="js/app.js" charset="utf-8"></script>
 	<script>
-		$('#myCarousel').carousel({
-			pause: 'none'
-		})
+		jQuery(document).ready(function (){ 
+			$('.carousel').carousel({
+				interval: 5000
+			});
+		});
 	</script>
 </body>
 </html>
