@@ -61,12 +61,12 @@
                                 @endcomponent
                             @endif
                             <label for="address">Адрес</label>
-                            <input id="address" placeholder="@lang('Address')" type="text" class="form-control" name="address" required>
+                            <input id="address" placeholder="@lang('Address')" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
                             <small id="typeHelp" class="form-text text-muted">Номер телефона или ссылка на профиль или почту.</small>
                         </div>
                         <div class="form-group">
                             <label for="message">Сообщение</label>
-                            <textarea name="message" id="message" class="form-control" placeholder="@lang('Your message')"></textarea>
+                            <textarea name="message" id="message" class="form-control" placeholder="@lang('Your message')">{{ old('message') }}</textarea>
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-10">

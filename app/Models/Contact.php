@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 use App\Events\ModelCreated;
+use Notification;
+use App\Notifications\ContactCreate;
 
 class Contact extends Model
 {
     use IngoingTrait;
+    use Notifiable;
 
     /**
      * The event map for the model.
@@ -24,4 +28,12 @@ class Contact extends Model
      * @var array
      */
     protected $fillable = ['name', 'type', 'address', 'message'];
+
+    public static function boot() {
+        parent::boot();
+	self::created(function($model) {
+            Notification::send($model, new ContactCreate($model->user));
+	});
+    }
+
 }
