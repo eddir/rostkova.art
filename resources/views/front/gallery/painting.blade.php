@@ -25,3 +25,7 @@
 @include('front.components.photoswipe')
 
 @endsection
+
+@section('title')
+	{{ $painting->title }}
+@endsection

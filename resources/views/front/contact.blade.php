@@ -99,3 +99,7 @@
     'action' => 'homepage'
 ]) !!}
 @endsection
+
+@section('title')
+	Написать нам
+@endsection
