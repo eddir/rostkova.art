@@ -93,3 +93,9 @@
 </div> <!-- end content --> 
       
 @endsection
+
+@section('css')
+{!! htmlScriptTagJsApiV3([
+    'action' => 'homepage'
+]) !!}
+@endsection

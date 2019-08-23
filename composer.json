@@ -10,6 +10,7 @@
         "baum/baum": "^1.1",
         "bestmomo/laravel-email-confirmation": "^1.1",
         "bestmomo/laravel5-artisan-language": "^0.1.2",
+        "biscolab/laravel-recaptcha": "^3.6",
         "creativeorange/gravatar": "^1.0",
         "fideloper/proxy": "^4.0",
         "intervention/image": "^2.5",

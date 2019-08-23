@@ -38,7 +38,7 @@ class ContactCreate extends Notification
     public function toTelegram($contact)
     {
         return TelegramMessage::create()
-	    ->to(env('TELEGRAM_BOT_CHAT'))
+	        ->to(env('TELEGRAM_BOT_CHAT'))
             ->content('Закааааз от *' . $contact->name . "*:\n\n" . $contact->message . "\n\nСвязь: *" . $contact->type . "*\nСсылка: `" . $contact->address . '`');
     }
 
