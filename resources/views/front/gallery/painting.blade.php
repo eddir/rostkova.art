@@ -10,11 +10,11 @@
 
             <div class="card">
                 <div class="card-body">
-                    <img onclick="openPhotoSwipe()" class="photoswipe" src="{{ $painting->image }}" style="width: 100%"></img>
-                    <p class="h2">Название: <b>{{ $painting->title }}</p>
-                    <p class="h2">Цена: <b>{{ round($painting->price) }}₽</p>
-		    {!! $painting->body !!}
-		    <br><br><p><a href="{{ route('contacts.create') }}" class="btn btn-outline-primary">Заказать</a></p>
+                    <img onclick="openPhotoSwipe()" class="photoswipe picture-frame" src="{{ $painting->image }}" style="width: 100%"></img>
+                    <p class="h1">Название: <b>{{ $painting->title }}</p>
+                    {!! $painting->body !!}
+                    <br><br>
+                    <p><a href="{{ route('contacts.create') }}" class="btn btn-outline-primary">Заказать</a></p>
                 </div>
             </div>
 
@@ -24,8 +24,4 @@
 
 @include('front.components.photoswipe')
 
-@endsection
-
-@section('title')
-	{{ $painting->title }}
 @endsection

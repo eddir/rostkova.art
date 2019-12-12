@@ -219,7 +219,8 @@ desired effect
           ],
         ])
 
-        <li><a href="{{ route('helper') }}"><i class="fa fa-flash"></i> <span>@lang('Helper')</span></a></li>
+       <li><a href="{{ route('helper') }}"><i class="fa fa-flash"></i> <span>@lang('Helper')</span></a></li>
+       <li><a href="{{ route('home') }}"><i class="fa fa-flash"></i> <span>На сайт</span></a></li>
         <li><a href="{{ route('medias.index') }}"><i class="fa fa-image"></i> <span>@lang('Medias')</span></a></li>
         
         @admin

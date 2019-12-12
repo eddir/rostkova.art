@@ -118,3 +118,11 @@ footer p {
 	width: 100%;
 	object-fit: cover;
 }
+
+.picture-frame {
+    border: 30px solid transparent;
+    -moz-border-image: url(/images/frame.png) 10 stretch round;
+    -webkit-border-image: url(/images/frame.png) 10 stretch round;
+    -o-border-image: url(/images/frame.png) 10 stretch round;
+    border-image: url(/images/frame.png) 10 stretch round;
+}
